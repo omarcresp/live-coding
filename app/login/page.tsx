@@ -36,11 +36,11 @@ function UserAuthForm() {
 				<Image
 					aria-hidden
 					priority
-					className="mx-auto"
-					src="/assets/grayola.png"
+					className="mx-8"
+					src="/assets/grayola-White.png"
 					alt="File icon"
-					width={400}
-					height={225}
+					width={305}
+					height={100}
 				/>
 
 				<form {...getFormProps(form)} action={loginAction}>

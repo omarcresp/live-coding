@@ -3,17 +3,20 @@ import { type FieldMetadata, getInputProps } from "@conform-to/react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+type InputAllowedType = "text" | "number" | "email" | "password";
+
 interface TextFieldProps extends React.ComponentProps<"input"> {
 	label: string;
 	isLoading: boolean;
 	field: FieldMetadata<string | number>;
+	type: InputAllowedType;
 }
 
 export function TextField({
 	label,
 	field,
 	isLoading,
-	type,
+	type = "text",
 	...props
 }: TextFieldProps) {
 	return (
@@ -22,13 +25,9 @@ export function TextField({
 
 			<Input
 				{...props}
-				{...getInputProps(field, { type: "email" })}
+				{...getInputProps(field, { type })}
+				key={field.id}
 				defaultValue={field.value}
-				type={type}
-				placeholder="name@example.com"
-				autoCapitalize="none"
-				autoComplete="email"
-				autoCorrect="off"
 				disabled={isLoading}
 			/>
 
