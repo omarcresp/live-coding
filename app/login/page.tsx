@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect } from "react";
 import Image from "next/image";
+import { toast } from "sonner";
 import { getFormProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 
@@ -26,7 +27,7 @@ function UserAuthForm() {
 
 	useEffect(() => {
 		if (form.errors?.length) {
-			alert(form.errors.join());
+			toast.error(form.errors.join());
 		}
 	}, [form.errors]);
 
