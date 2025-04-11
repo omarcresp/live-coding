@@ -92,12 +92,11 @@ function UserAuthForm() {
 				</div>
 
 				<Button variant="outline" type="button" disabled={pending}>
-					{pending ? (
-						<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-					) : (
-						<Icons.google className="mr-2 h-4 w-4" />
-					)}{" "}
-					Google
+					{pending
+						? (
+							<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+						)
+						: <Icons.google className="mr-2 h-4 w-4" />} Google
 				</Button>
 			</div>
 		</div>

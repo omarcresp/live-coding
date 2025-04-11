@@ -21,7 +21,15 @@ export function TextField({
 }: TextFieldProps) {
 	return (
 		<div className="grid gap-2">
-			<Label htmlFor={field.id}>{label}</Label>
+			<div className="flex items-center">
+				<Label htmlFor={field.id}>{label}</Label>
+
+				{label.toLowerCase() === 'password' && (
+					<a href="#" className="ml-auto inline-block text-sm underline-offset-4 hover:underline" >
+						Forgot your password?
+					</a>
+				)}
+			</div>
 
 			<Input
 				{...props}
