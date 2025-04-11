@@ -22,5 +22,5 @@ export async function loginUser(_: unknown, formData: FormData) {
 		return submission.reply({ formErrors: [error.message] });
 	}
 
-	redirect("/");
+	redirect("/dashboard");
 }
